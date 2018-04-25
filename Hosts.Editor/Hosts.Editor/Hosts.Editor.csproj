@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ChaosMonkey.Guards, Version=1.0.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChaosMonkey.Guards.1.0.30\lib\net35\ChaosMonkey.Guards.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,8 @@
     <Compile Include="Domain\FileManager.cs" />
     <Compile Include="Domain\HostsFile.cs" />
     <Compile Include="Domain\IFileManager.cs" />
+    <Compile Include="Domain\IHostsFile.cs" />
+    <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="Windows\IMainView.cs" />
     <Compile Include="Windows\MainWindow.cs">
@@ -70,6 +75,7 @@
     <EmbeddedResource Include="Windows\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

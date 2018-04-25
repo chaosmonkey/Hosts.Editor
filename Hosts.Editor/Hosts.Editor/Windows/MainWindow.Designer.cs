@@ -46,7 +46,7 @@
             this.FileMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(484, 24);
+            this.MainMenu.Size = new System.Drawing.Size(584, 24);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -75,6 +75,7 @@
             this.FileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.FileSaveMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileSaveMenuItem.Text = "&Save";
+            this.FileSaveMenuItem.Click += new System.EventHandler(this.FileSaveMenuItem_Click);
             // 
             // FileSaveAsMenuItem
             // 
@@ -102,6 +103,7 @@
             this.StatusBar.Size = new System.Drawing.Size(484, 22);
             this.StatusBar.TabIndex = 1;
             this.StatusBar.Text = "statusStrip1";
+            this.StatusBar.Visible = false;
             // 
             // ContentTextBox
             // 
@@ -113,7 +115,7 @@
             this.ContentTextBox.Multiline = true;
             this.ContentTextBox.Name = "ContentTextBox";
             this.ContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ContentTextBox.Size = new System.Drawing.Size(484, 265);
+            this.ContentTextBox.Size = new System.Drawing.Size(584, 637);
             this.ContentTextBox.TabIndex = 2;
             this.ContentTextBox.WordWrap = false;
             // 
@@ -121,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.ClientSize = new System.Drawing.Size(584, 661);
             this.Controls.Add(this.ContentTextBox);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.MainMenu);

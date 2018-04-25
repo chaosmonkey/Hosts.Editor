@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Hosts.Editor.Domain;
 using Hosts.Editor.Presenters;
 
 namespace Hosts.Editor.Windows
@@ -8,10 +9,10 @@ namespace Hosts.Editor.Windows
         public MainWindow()
         {
             InitializeComponent();
-            Presenter = new MainPresenter(this);
+            Presenter = new MainPresenter(this, new HostsFile(new FileManager()));
         }
 
-        protected MainPresenter Presenter { get; }
+        protected IMainPresenter Presenter { get; }
 
         public string Content
         {
@@ -19,9 +20,29 @@ namespace Hosts.Editor.Windows
             set => ContentTextBox.Text = value;
         }
 
+        private bool _hasChanges = false;
+        public bool HasChanges
+        {
+            get
+            {
+                return _hasChanges;
+            }
+            set
+            {
+                _hasChanges = value;
+                FileSaveMenuItem.Enabled = _hasChanges;
+                Text = 
+            }
+        }
+
         private void MainWindow_Shown(object sender, System.EventArgs e)
         {
             Presenter.Initialize();
+        }
+
+        private void FileSaveMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Presenter.Save();
         }
     }
 }
