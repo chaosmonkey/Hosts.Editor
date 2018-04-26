@@ -7,5 +7,7 @@ namespace Hosts.Editor.Presenters
         MainViewModel Model { get; set; }
 
         void Initialize();
+
+        void Save();
     }
 }

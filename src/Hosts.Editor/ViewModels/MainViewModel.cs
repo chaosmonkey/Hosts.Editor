@@ -2,7 +2,9 @@
 {
     public class MainViewModel : Bindable
     {
+        private const string DefaultWindowTitle = "Hosts Editor";
         private string _content;
+        private bool _hasChanges;
 
         public string Content
         {
@@ -12,12 +14,28 @@
             }
             set
             {
-                Set(ref _content, value); 
+                if (Set(ref _content, value))
+                {
+                    HasChanges = true;
+                }
+            }
+        }
+        
+        public bool HasChanges
+        {
+            get
+            {
+                return _hasChanges;
+            }
+            set
+            {
+                if (Set(ref _hasChanges, value))
+                {
+                    OnPropertyChanged("WindowText");
+                }
             }
         }
 
-        public bool CanSave { get; set; }
-
-        public bool HasChanges { get; set; }
+        public string WindowText => (HasChanges) ? $"{DefaultWindowTitle} *" : DefaultWindowTitle;
     }
 }

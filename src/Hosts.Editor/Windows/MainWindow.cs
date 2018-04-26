@@ -24,7 +24,17 @@ namespace Hosts.Editor.Windows
 
         private void FileSaveMenuItem_Click(object sender, System.EventArgs e)
         {
-            
+            Presenter.Save();
+        }
+
+        private void MainMenu_DropDownOpened(object sender, System.EventArgs e)
+        {
+            switch((sender as ToolStripMenuItem)?.Name)
+            {
+                case "FileMenuItem":
+                    FileSaveMenuItem.Enabled = Presenter.Model.HasChanges;
+                    break;
+            }
         }
     }
 }

@@ -45,11 +45,12 @@
             // 
             // MainMenu
             // 
+            this.MainMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(584, 24);
+            this.MainMenu.Size = new System.Drawing.Size(584, 40);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -62,14 +63,15 @@
             this.FileSeperator1,
             this.FileExitMenuItem});
             this.FileMenuItem.Name = "FileMenuItem";
-            this.FileMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.FileMenuItem.Size = new System.Drawing.Size(64, 36);
             this.FileMenuItem.Text = "&File";
+            this.FileMenuItem.DropDownOpened += new System.EventHandler(this.MainMenu_DropDownOpened);
             // 
             // FileOpenMenuItem
             // 
             this.FileOpenMenuItem.Name = "FileOpenMenuItem";
             this.FileOpenMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.FileOpenMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.FileOpenMenuItem.Size = new System.Drawing.Size(364, 38);
             this.FileOpenMenuItem.Text = "&Open ...";
             this.FileOpenMenuItem.Visible = false;
             // 
@@ -77,7 +79,7 @@
             // 
             this.FileSaveMenuItem.Name = "FileSaveMenuItem";
             this.FileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.FileSaveMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.FileSaveMenuItem.Size = new System.Drawing.Size(364, 38);
             this.FileSaveMenuItem.Text = "&Save";
             this.FileSaveMenuItem.Click += new System.EventHandler(this.FileSaveMenuItem_Click);
             // 
@@ -86,23 +88,24 @@
             this.FileSaveAsMenuItem.Name = "FileSaveAsMenuItem";
             this.FileSaveAsMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.FileSaveAsMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.FileSaveAsMenuItem.Size = new System.Drawing.Size(364, 38);
             this.FileSaveAsMenuItem.Text = "Save &As ...";
             this.FileSaveAsMenuItem.Visible = false;
             // 
             // FileSeperator1
             // 
             this.FileSeperator1.Name = "FileSeperator1";
-            this.FileSeperator1.Size = new System.Drawing.Size(195, 6);
+            this.FileSeperator1.Size = new System.Drawing.Size(361, 6);
             // 
             // FileExitMenuItem
             // 
             this.FileExitMenuItem.Name = "FileExitMenuItem";
-            this.FileExitMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.FileExitMenuItem.Size = new System.Drawing.Size(364, 38);
             this.FileExitMenuItem.Text = "E&xit";
             // 
             // StatusBar
             // 
+            this.StatusBar.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.StatusBar.Location = new System.Drawing.Point(0, 639);
             this.StatusBar.Name = "StatusBar";
             this.StatusBar.Size = new System.Drawing.Size(584, 22);
@@ -115,24 +118,25 @@
             this.ContentTextBox.AcceptsReturn = true;
             this.ContentTextBox.AcceptsTab = true;
             this.ContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ContentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Bindings, "Content", true));
+            this.ContentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Bindings, "Content", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ContentTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentTextBox.Location = new System.Drawing.Point(0, 24);
+            this.ContentTextBox.Location = new System.Drawing.Point(0, 40);
             this.ContentTextBox.Multiline = true;
             this.ContentTextBox.Name = "ContentTextBox";
             this.ContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ContentTextBox.Size = new System.Drawing.Size(584, 637);
+            this.ContentTextBox.Size = new System.Drawing.Size(584, 621);
             this.ContentTextBox.TabIndex = 2;
             this.ContentTextBox.WordWrap = false;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 661);
             this.Controls.Add(this.ContentTextBox);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.MainMenu);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Bindings, "WindowText", true));
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.MainMenu;
             this.MinimumSize = new System.Drawing.Size(500, 350);
