@@ -15,9 +15,11 @@ namespace Hosts.Editor
         [STAThread]
         static void Main()
         {
+            var resolver = new DependencyResolver();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            var window = resolver.Resolve<MainWindow>();
+            Application.Run(window);
         }
     }
 }

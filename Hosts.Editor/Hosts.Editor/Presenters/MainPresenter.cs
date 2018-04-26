@@ -1,21 +1,29 @@
-﻿using System;
+﻿using ChaosMonkey.Guards;
 using Hosts.Editor.Domain;
-using Hosts.Editor.Windows;
+using Hosts.Editor.ViewModels;
 
 namespace Hosts.Editor.Presenters
 {
-    public class MainPresenter
+    public class MainPresenter : IMainPresenter
     {
-        public MainPresenter(IMainView view)
+        public MainPresenter(IHostsFile hosts)
         {
-            View = view ?? throw new ArgumentNullException(nameof(view));
+            Guard.IsNotNull(hosts, nameof(hosts));
+            Hosts = hosts;
+            Model = new MainViewModel();
         }
 
-        protected IMainView View { get; }
+        protected IHostsFile Hosts { get; }
+
+        public MainViewModel Model { get; set; }
 
         public void Initialize()
         {
-            View.Content = HostsFile.DefaultLocation;
+            if (Hosts.DefaultFileExists)
+            {
+                Hosts.LoadFromDefaultLocation();
+            }
+            Model.Content = Hosts.Content;
         }
     }
 }

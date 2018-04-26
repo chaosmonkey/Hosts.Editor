@@ -1,23 +1,21 @@
 ﻿using System.Windows.Forms;
+using ChaosMonkey.Guards;
 using Hosts.Editor.Presenters;
 
 namespace Hosts.Editor.Windows
 {
-    public partial class MainWindow : Form, IMainView
+    public partial class MainWindow : Form
     {
-        public MainWindow()
+        public MainWindow(IMainPresenter presenter)
         {
+            Guard.IsNotNull(presenter, nameof(presenter));
             InitializeComponent();
-            Presenter = new MainPresenter(this);
+
+            Presenter = presenter;
+            Bindings.DataSource = Presenter.Model;
         }
 
-        protected MainPresenter Presenter { get; }
-
-        public string Content
-        {
-            get => ContentTextBox.Text;
-            set => ContentTextBox.Text = value;
-        }
+        protected IMainPresenter Presenter { get; }
 
         private void MainWindow_Shown(object sender, System.EventArgs e)
         {

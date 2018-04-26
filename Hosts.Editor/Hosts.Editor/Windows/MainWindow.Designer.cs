@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileOpenMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,7 +38,9 @@
             this.FileExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StatusBar = new System.Windows.Forms.StatusStrip();
             this.ContentTextBox = new System.Windows.Forms.TextBox();
+            this.Bindings = new System.Windows.Forms.BindingSource(this.components);
             this.MainMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Bindings)).BeginInit();
             this.SuspendLayout();
             // 
             // MainMenu
@@ -46,7 +49,7 @@
             this.FileMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(484, 24);
+            this.MainMenu.Size = new System.Drawing.Size(584, 24);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -68,6 +71,7 @@
             this.FileOpenMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.FileOpenMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileOpenMenuItem.Text = "&Open ...";
+            this.FileOpenMenuItem.Visible = false;
             // 
             // FileSaveMenuItem
             // 
@@ -83,6 +87,7 @@
             | System.Windows.Forms.Keys.S)));
             this.FileSaveAsMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileSaveAsMenuItem.Text = "Save &As ...";
+            this.FileSaveAsMenuItem.Visible = false;
             // 
             // FileSeperator1
             // 
@@ -97,23 +102,25 @@
             // 
             // StatusBar
             // 
-            this.StatusBar.Location = new System.Drawing.Point(0, 289);
+            this.StatusBar.Location = new System.Drawing.Point(0, 639);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(484, 22);
+            this.StatusBar.Size = new System.Drawing.Size(584, 22);
             this.StatusBar.TabIndex = 1;
             this.StatusBar.Text = "statusStrip1";
+            this.StatusBar.Visible = false;
             // 
             // ContentTextBox
             // 
             this.ContentTextBox.AcceptsReturn = true;
             this.ContentTextBox.AcceptsTab = true;
             this.ContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ContentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Bindings, "Content", true));
             this.ContentTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentTextBox.Location = new System.Drawing.Point(0, 24);
             this.ContentTextBox.Multiline = true;
             this.ContentTextBox.Name = "ContentTextBox";
             this.ContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ContentTextBox.Size = new System.Drawing.Size(484, 265);
+            this.ContentTextBox.Size = new System.Drawing.Size(584, 637);
             this.ContentTextBox.TabIndex = 2;
             this.ContentTextBox.WordWrap = false;
             // 
@@ -121,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.ClientSize = new System.Drawing.Size(584, 661);
             this.Controls.Add(this.ContentTextBox);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.MainMenu);
@@ -134,6 +141,7 @@
             this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Bindings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +158,7 @@
         private System.Windows.Forms.ToolStripMenuItem FileExitMenuItem;
         private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.TextBox ContentTextBox;
+        private System.Windows.Forms.BindingSource Bindings;
     }
 }
 
