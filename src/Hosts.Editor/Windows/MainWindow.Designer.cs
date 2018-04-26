@@ -121,6 +121,7 @@
             this.ContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ContentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Bindings, "Content", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ContentTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentTextBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContentTextBox.Location = new System.Drawing.Point(0, 24);
             this.ContentTextBox.Multiline = true;
             this.ContentTextBox.Name = "ContentTextBox";
