@@ -79,6 +79,7 @@
             this.FileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.FileSaveMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileSaveMenuItem.Text = "&Save";
+            this.FileSaveMenuItem.Click += new System.EventHandler(this.FileSaveMenuItem_Click);
             // 
             // FileSaveAsMenuItem
             // 

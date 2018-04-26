@@ -21,5 +21,10 @@ namespace Hosts.Editor.Windows
         {
             Presenter.Initialize();
         }
+
+        private void FileSaveMenuItem_Click(object sender, System.EventArgs e)
+        {
+            
+        }
     }
 }

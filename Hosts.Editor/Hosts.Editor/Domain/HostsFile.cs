@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChaosMonkey.Guards;
+using System;
 
 namespace Hosts.Editor.Domain
 {
@@ -6,7 +7,8 @@ namespace Hosts.Editor.Domain
     {
         public HostsFile(IFileManager fileManager)
         {
-            FileManager = fileManager ?? throw new ArgumentNullException(nameof(fileManager));
+            Guard.IsNotNull(fileManager, nameof(fileManager));
+            FileManager = fileManager;
         }
 
         public const string DefaultFileName = "hosts";

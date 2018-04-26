@@ -16,6 +16,9 @@ namespace Hosts.Editor.Presenters
         protected IHostsFile Hosts { get; }
 
         public MainViewModel Model { get; set; }
+        
+
+        public  string DefaultTitle = "Hosts Editor";
 
         public void Initialize()
         {
