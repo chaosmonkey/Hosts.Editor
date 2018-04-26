@@ -2,7 +2,7 @@
 using Autofac;
 using Hosts.Editor.Windows;
 
-namespace Hosts.Editor
+namespace Hosts.Editor.Infrastructure
 {
     public class DependencyResolver : IDependencyResolver
     {

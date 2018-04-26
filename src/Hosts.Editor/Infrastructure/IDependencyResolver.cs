@@ -1,4 +1,4 @@
-﻿namespace Hosts.Editor
+﻿namespace Hosts.Editor.Infrastructure
 {
     public interface IDependencyResolver
     {

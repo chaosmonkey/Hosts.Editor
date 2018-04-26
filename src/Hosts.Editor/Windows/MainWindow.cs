@@ -17,11 +17,18 @@ namespace Hosts.Editor.Windows
 
         protected IMainPresenter Presenter { get; }
 
+        // Form Events
         private void MainWindow_Shown(object sender, System.EventArgs e)
         {
             Presenter.Initialize();
         }
 
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = !Presenter.Close();
+        }
+
+        // Control Events
         private void FileSaveMenuItem_Click(object sender, System.EventArgs e)
         {
             Presenter.Save();
@@ -36,5 +43,11 @@ namespace Hosts.Editor.Windows
                     break;
             }
         }
+
+        private void FileExitMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

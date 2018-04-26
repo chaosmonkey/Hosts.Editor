@@ -54,12 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyResolver.cs" />
+    <Compile Include="Infrastructure\DependencyResolver.cs" />
     <Compile Include="Domain\FileManager.cs" />
     <Compile Include="Domain\HostsFile.cs" />
     <Compile Include="Domain\IFileManager.cs" />
     <Compile Include="Domain\IHostsFile.cs" />
-    <Compile Include="IDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IInteractionManager.cs" />
+    <Compile Include="Infrastructure\InteractionManager.cs" />
     <Compile Include="Presenters\IMainPresenter.cs" />
     <Compile Include="Presenters\MainPresenter.cs" />
     <Compile Include="ViewModels\Bindable.cs" />

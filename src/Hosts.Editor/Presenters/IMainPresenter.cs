@@ -9,5 +9,7 @@ namespace Hosts.Editor.Presenters
         void Initialize();
 
         void Save();
+
+        bool Close();
     }
 }

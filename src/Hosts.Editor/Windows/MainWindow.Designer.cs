@@ -50,7 +50,7 @@
             this.FileMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(584, 40);
+            this.MainMenu.Size = new System.Drawing.Size(584, 24);
             this.MainMenu.TabIndex = 0;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -63,7 +63,7 @@
             this.FileSeperator1,
             this.FileExitMenuItem});
             this.FileMenuItem.Name = "FileMenuItem";
-            this.FileMenuItem.Size = new System.Drawing.Size(64, 36);
+            this.FileMenuItem.Size = new System.Drawing.Size(37, 20);
             this.FileMenuItem.Text = "&File";
             this.FileMenuItem.DropDownOpened += new System.EventHandler(this.MainMenu_DropDownOpened);
             // 
@@ -71,7 +71,7 @@
             // 
             this.FileOpenMenuItem.Name = "FileOpenMenuItem";
             this.FileOpenMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.FileOpenMenuItem.Size = new System.Drawing.Size(364, 38);
+            this.FileOpenMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileOpenMenuItem.Text = "&Open ...";
             this.FileOpenMenuItem.Visible = false;
             // 
@@ -79,7 +79,7 @@
             // 
             this.FileSaveMenuItem.Name = "FileSaveMenuItem";
             this.FileSaveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.FileSaveMenuItem.Size = new System.Drawing.Size(364, 38);
+            this.FileSaveMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileSaveMenuItem.Text = "&Save";
             this.FileSaveMenuItem.Click += new System.EventHandler(this.FileSaveMenuItem_Click);
             // 
@@ -88,20 +88,21 @@
             this.FileSaveAsMenuItem.Name = "FileSaveAsMenuItem";
             this.FileSaveAsMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.FileSaveAsMenuItem.Size = new System.Drawing.Size(364, 38);
+            this.FileSaveAsMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileSaveAsMenuItem.Text = "Save &As ...";
             this.FileSaveAsMenuItem.Visible = false;
             // 
             // FileSeperator1
             // 
             this.FileSeperator1.Name = "FileSeperator1";
-            this.FileSeperator1.Size = new System.Drawing.Size(361, 6);
+            this.FileSeperator1.Size = new System.Drawing.Size(195, 6);
             // 
             // FileExitMenuItem
             // 
             this.FileExitMenuItem.Name = "FileExitMenuItem";
-            this.FileExitMenuItem.Size = new System.Drawing.Size(364, 38);
+            this.FileExitMenuItem.Size = new System.Drawing.Size(198, 22);
             this.FileExitMenuItem.Text = "E&xit";
+            this.FileExitMenuItem.Click += new System.EventHandler(this.FileExitMenuItem_Click);
             // 
             // StatusBar
             // 
@@ -120,17 +121,17 @@
             this.ContentTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ContentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Bindings, "Content", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.ContentTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ContentTextBox.Location = new System.Drawing.Point(0, 40);
+            this.ContentTextBox.Location = new System.Drawing.Point(0, 24);
             this.ContentTextBox.Multiline = true;
             this.ContentTextBox.Name = "ContentTextBox";
             this.ContentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ContentTextBox.Size = new System.Drawing.Size(584, 621);
+            this.ContentTextBox.Size = new System.Drawing.Size(584, 637);
             this.ContentTextBox.TabIndex = 2;
             this.ContentTextBox.WordWrap = false;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 661);
             this.Controls.Add(this.ContentTextBox);
@@ -143,6 +144,7 @@
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hosts Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Shown += new System.EventHandler(this.MainWindow_Shown);
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
